@@ -160,10 +160,46 @@
             const message = document.getElementById("message").value;
             const organizationName = document.getElementById("organizationName").value;
 
+            const auth_token = 'db2940f4-fb54-44d9-b4d1-4c6a367da27f';
+            const phone_number_id = '63810e4a-a558-4cdd-b233-9a50dc2ef288'
+            const customer_number = "+91 " + phoneNumber;
+
+            const headers = {
+            'Authorization': `Bearer ${auth_token}`,
+            'Content-Type': 'application/json',
+            }
+
+            const data = {
+                'assistant': {
+                    "firstMessage": message,
+                    "model": {
+                        "provider": "openai",
+                        "model": "gpt-3.5-turbo",
+                        "messages": [
+                            {
+                                "role": "system",
+                                "content": "You are an assistant."
+                            }
+                        ]
+                    },
+                    "voice": "jennifer-playht",
+                },
+                "assistantId": "e18c3847-a2cf-493e-9aed-ec7cf54a891b",
+                'phoneNumberId': phone_number_id,
+                'customer': {
+                    'number': customer_number,
+                },
+            }
+
+
             // Perform API fetch here
             // Replace this with your actual API endpoint
-            const apiUrl = 'https://example.com/api?phoneNumber=' + phoneNumber + '&message=' + message + '&organizationName=' + organizationName;
-            fetch(apiUrl)
+            const apiUrl = 'https://api.vapi.ai/call/phone';
+            fetch(apiUrl, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: headers
+            })
                 .then(response => response.json())
                 .then(data => {
                     console.log(data); // Handle API response data
