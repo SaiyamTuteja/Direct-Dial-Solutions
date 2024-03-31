@@ -924,3 +924,27 @@ ul.conta li a {
 .hosting_page .footer {
      margin-top: 60px;
 }
+
+.img-box {
+     margin: 15px 15px;
+ 
+     img {
+       width: 75%;
+       animation: upDown 5s infinite;
+     }
+ 
+   }
+ 
+   @keyframes upDown {
+     0% {
+       transform: translateY(-45px);
+     }
+ 
+     50% {
+       transform: translateY(45px);
+     }
+ 
+     100% {
+       transform: translateY(-45px);
+     }
+   }
