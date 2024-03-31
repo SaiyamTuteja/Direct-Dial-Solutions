@@ -32,7 +32,7 @@
 <body class="main-layout inner_page">
     <!-- loader  -->
     <div class="loader_bg">
-        <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+        <div class="loader"><img src="images/loading2.gif" alt="#" /></div>
     </div>
     <!-- end loader -->
     <!-- header -->
@@ -84,6 +84,7 @@
     <!-- end header inner -->
 
     <!-- Demo  -->
+
     <style>
         /* Custom styles for the button */
         .custom-button {
@@ -129,14 +130,30 @@
             transform: scale(1.05);
             /* Adjust the scale factor as needed */
         }
+
+        .order-box_main2 {
+            width: 125%;
+            /* Increase width as needed */
+            margin: 0 auto;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
     </style>
 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <div id="ho_co" class="order-box_main">
+
+                <div id="ho_co" class="order-box_main2">
                     <div class="order-box text_align_center">
-                        <h3>Direct Dial Calling For <span id="orgNamePlaceholder">_____________</span></h3>
+                        <div class="titlepage text_align_center">
+                            <h2>Direct Dial Calling For, <span class="blue_light"
+                                    id="orgNamePlaceholder">__________</span>
+                            </h2>
+                        </div>
+                        <!-- <h3>Direct Dial Calling For <span id="orgNamePlaceholder">_____________</span></h3> -->
                         <ul class="supp">
                             <li><label for="phoneNumber" class="custom-label">Number:</label> <input type="text"
                                     id="phoneNumber" class="custom-input" placeholder="Enter number"></li>
@@ -165,8 +182,8 @@
             const customer_number = "+91 " + phoneNumber;
 
             const headers = {
-            'Authorization': `Bearer ${auth_token}`,
-            'Content-Type': 'application/json',
+                'Authorization': `Bearer ${auth_token}`,
+                'Content-Type': 'application/json',
             }
 
             const data = {
