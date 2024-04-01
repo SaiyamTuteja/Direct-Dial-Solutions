@@ -84,7 +84,6 @@
     <!-- end header inner -->
 
     <!-- Demo  -->
-
     <style>
         /* Custom styles for the button */
         .custom-button {
@@ -132,20 +131,38 @@
         }
 
         .order-box_main2 {
-            width: 125%;
-            /* Increase width as needed */
+            width: 100%;
+            /* Make the form container responsive */
+            max-width: 400px;
+            /* Set a maximum width */
             margin: 0 auto;
             background-color: #f8f9fa;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* Responsive title */
+        .titlepage h2 {
+            font-size: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .titlepage h2 {
+                font-size: 30px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .titlepage h2 {
+                font-size: 36px;
+            }
+        }
     </style>
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-4">
-
+            <div class="col-md-6"> <!-- Adjust column width for larger screens -->
                 <div id="ho_co" class="order-box_main2">
                     <div class="order-box text_align_center">
                         <div class="titlepage text_align_center">
@@ -153,7 +170,6 @@
                                     id="orgNamePlaceholder">__________</span>
                             </h2>
                         </div>
-                        <!-- <h3>Direct Dial Calling For <span id="orgNamePlaceholder">_____________</span></h3> -->
                         <ul class="supp">
                             <li><label for="phoneNumber" class="custom-label">Number:</label> <input type="text"
                                     id="phoneNumber" class="custom-input" placeholder="Enter number"></li>
@@ -170,6 +186,7 @@
             </div>
         </div>
     </div>
+
     <script>
         function callNow() {
             // Fetch data from API using JavaScript
